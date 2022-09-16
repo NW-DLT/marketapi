@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  back4ker4:
+    image: ${DOCKER_REGISTRY-}back4ker4
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  client:
+    image: client
+    build:
+        context: ./example-client
+        dockerfile: Dockerfile
+  proxy:
+    image: nginx:mainline
